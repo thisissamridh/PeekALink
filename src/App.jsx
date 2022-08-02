@@ -20,7 +20,8 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>Link Preview</h1>
+      <h1>PeakALink</h1>
+      <h4>Preview webiste with ease</h4>
       <div className="search">
         <input
           type="text"
@@ -32,7 +33,13 @@ const App = () => {
         <img src={SearchIcon} alt="Search" onClick={() => ScrapeUrl(url)}></img>
       </div>
       {/* <Preview preview={preview} /> */}
-      <WebsiteCard preview={preview} />
+      {preview.hasOwnProperty('error') ? (
+        <div className="empty">
+          <h2>Please enter a valid URL</h2>
+        </div>
+      ) : (
+        <WebsiteCard preview={preview} />
+      )}
     </div>
   );
 };

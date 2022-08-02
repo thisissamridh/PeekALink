@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SearchIcon from './search.svg';
 import './index.css';
-import Preview from './Preview';
+
 import WebsiteCard from './WebsiteCard';
 const API_URL = `https://api.linkpreview.net?key=${process.env.REACT_APP_API_KEY}`;
 

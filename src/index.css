@@ -14,7 +14,7 @@
 
 body {
   font-family: var(--font-roboto);
-  background-color: #e1d5cf;
+  background-color: #212426;
 }
 
 .app {
@@ -74,20 +74,6 @@ h1 {
   cursor: pointer;
 }
 
-/* .search button {
-  padding: 20px 40px;
-  border-radius: 0.5rem;
-  margin-left: 15px;
-  color: #a1a1a1;
-  font-family: var(--font-raleway);
-  font-weight: 900;
-  letter-spacing: 0.75px;
-  font-size: 1.25rem;
-  cursor: pointer;
-  background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-} */
 
 .empty {
   width: 100%;
@@ -114,7 +100,7 @@ h1 {
   flex-wrap: wrap;
 }
 
-.movie {
+.preview {
   width: 310px;
   height: 460px;
   margin: 1.5rem;
@@ -128,7 +114,7 @@ h1 {
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
 }
 
-.movie div:nth-of-type(1) {
+.preview div:nth-of-type(1) {
   position: absolute;
   padding: 16px;
   width: 100%;
@@ -137,22 +123,22 @@ h1 {
   color: #f9d3b4;
 }
 
-.movie:hover {
+.preview:hover {
   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
   transform: scale(1.05, 1.05);
 }
 
-.movie div:nth-of-type(2) {
+.preview div:nth-of-type(2) {
   width: 100%;
   height: 100%;
 }
 
-.movie div:nth-of-type(2) img {
+.preview div:nth-of-type(2) img {
   height: 100%;
   width: 100%;
 }
 
-.movie div:nth-of-type(3) {
+.preview div:nth-of-type(3) {
   z-index: 2;
   background-color: #343739;
   padding: 16px 24px 24px 24px;
@@ -163,7 +149,7 @@ h1 {
   left: 0;
 }
 
-.movie div:nth-of-type(3) span {
+.preview div:nth-of-type(3) span {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   font-size: 13px;
@@ -172,22 +158,22 @@ h1 {
   color: #f0f0f0;
 }
 
-.movie div:nth-of-type(3) h3 {
+.preview div:nth-of-type(3) h3 {
   margin-top: 5px;
   font-family: "Roboto Slab", serif;
   color: #f9d3b4;
 }
 
-.movie:hover div:nth-of-type(2) {
+.preview:hover div:nth-of-type(2) {
   height: 100%;
   opacity: 0.3;
 }
 
-.movie:hover div:nth-of-type(3) {
+.preview:hover div:nth-of-type(3) {
   background-color: transparent;
 }
 
-.movie:hover div:nth-of-type(1) {
+.preview:hover div:nth-of-type(1) {
   opacity: 1;
 }
 
@@ -224,7 +210,7 @@ h1 {
     margin-top: 2rem;
   }
 
-  .movie {
+  .preview {
     width: "100%";
     margin: 1rem;
   }

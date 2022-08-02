@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import SearchIcon from './search.svg';
 import './index.css';
-const APIkEY = '40e9cdda28cfcf01f9663be479332058';
-const API_URL = `https://api.linkpreview.net?key=${APIkEY}`;
+import Preview from './Preview';
+import WebsiteCard from './WebsiteCard';
+const API_URL = `https://api.linkpreview.net?key=${process.env.REACT_APP_API_KEY}`;
 
 const App = () => {
   const [url, setUrl] = useState('');
@@ -30,23 +31,8 @@ const App = () => {
         />
         <img src={SearchIcon} alt="Search" onClick={() => ScrapeUrl(url)}></img>
       </div>
-      <div>
-        <h2>Preview</h2>
-        <div className="preview">
-          <div className="preview-image">
-            <h2>Thumbnail</h2>
-            <img src={preview.image} alt="Preview" />
-          </div>
-          <h2>Title</h2>
-          <div className="preview-text">
-            <h3>{preview.title}</h3>
-            <h2>Description</h2>
-            <p>{preview.description}</p>
-            <h2>Website Link</h2>
-            <a href={preview.url}>{preview.url}</a>
-          </div>
-        </div>
-      </div>
+      {/* <Preview preview={preview} /> */}
+      <WebsiteCard preview={preview} />
     </div>
   );
 };

@@ -11,7 +11,7 @@ const App = () => {
   const ScrapeUrl = async (URL) => {
     const response = await fetch(`${API_URL}&q=${URL}`);
     const data = await response.json();
-    console.log(data);
+    setPreview(data);
   };
   useEffect(() => {
     ScrapeUrl('https://www.google.com');
@@ -29,6 +29,23 @@ const App = () => {
           onKeyDown={(e) => e.key === 'Enter' && ScrapeUrl(url)}
         />
         <img src={SearchIcon} alt="Search" onClick={() => ScrapeUrl(url)}></img>
+      </div>
+      <div>
+        <h2>Preview</h2>
+        <div className="preview">
+          <div className="preview-image">
+            <h2>Thumbnail</h2>
+            <img src={preview.image} alt="Preview" />
+          </div>
+          <h2>Title</h2>
+          <div className="preview-text">
+            <h3>{preview.title}</h3>
+            <h2>Description</h2>
+            <p>{preview.description}</p>
+            <h2>Website Link</h2>
+            <a href={preview.url}>{preview.url}</a>
+          </div>
+        </div>
       </div>
     </div>
   );

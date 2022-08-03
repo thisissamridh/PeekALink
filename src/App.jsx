@@ -23,7 +23,7 @@ const App = () => {
     setPreview(data);
   };
   useEffect(() => {
-    ScrapeUrl('https://www.findcoder.io');
+    ScrapeUrl('https://www.youtube.com');
   }, []);
 
   return (
@@ -45,11 +45,7 @@ const App = () => {
             <h2>Please enter a valid URL</h2>
           </div>
         ) : (
-          <>
-            {/* <Preview preview={preview} />
-            <WebsiteCard preview={preview} /> */}
-            <Card preview={preview} />
-          </>
+          <Card preview={preview} />
         )}
       </div>
     </div>

@@ -18,19 +18,12 @@
 
 body {
   font-family: var(--font-roboto);
-  background: linear-gradient(
-    180deg,
-    #256b61 10%,
-    #377e71 25%,
-    #6dafa1 40%,
-    #c3d8d4 60%,
-    #e1ad68 100%
-  );
+  /* background: linear-gradient(180deg, #256b61 10%, #e1ad68 100%); */
+  background-color: #212426;
 }
 
 .app {
-  padding: 2rem 0 2rem;
-
+  padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,8 +41,8 @@ h1 {
 }
 
 .search {
-  width: 45%;
-  margin: 1.5em 0 1.5rem;
+  width: 55%;
+  margin: 3em 0 2rem;
 
   display: flex;
   align-items: center;
@@ -83,7 +76,7 @@ h1 {
 
 .empty {
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 2rem;
 
   display: flex;
   justify-content: center;
@@ -92,7 +85,7 @@ h1 {
 
 .empty h2 {
   font-size: 1.25rem;
-  color: #f9d3b4;
+  color: #4b4947;
   font-family: var(--font-raleway);
 }
 

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import SearchIcon from './search.svg';
 import './index.css';
+import Card from './Card';
 
-import WebsiteCard from './WebsiteCard';
 const API_URL = `https://api.linkpreview.net?key=${process.env.REACT_APP_API_KEY}`;
 
 const App = () => {
@@ -10,36 +10,48 @@ const App = () => {
   const [preview, setPreview] = useState({});
 
   const ScrapeUrl = async (URL) => {
-    const response = await fetch(`${API_URL}&q=${URL}`);
+    const response = await fetch(`${API_URL}&q=${URL}`, {
+      method: 'GET',
+      mode: 'cors',
+
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    });
     const data = await response.json();
     setPreview(data);
   };
   useEffect(() => {
-    ScrapeUrl('https://www.google.com');
+    ScrapeUrl('https://www.findcoder.io');
   }, []);
 
   return (
     <div className="app">
-      <h1>PeakALink</h1>
-      <h4>Preview webiste with ease</h4>
+      <h1>PeekaLink</h1>
       <div className="search">
         <input
           type="text"
-          placeholder="Enter a URL"
+          placeholder="Enter a URL to preview"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && ScrapeUrl(url)}
         />
         <img src={SearchIcon} alt="Search" onClick={() => ScrapeUrl(url)}></img>
       </div>
-      {/* <Preview preview={preview} /> */}
-      {preview.hasOwnProperty('error') ? (
-        <div className="empty">
-          <h2>Please enter a valid URL</h2>
-        </div>
-      ) : (
-        <WebsiteCard preview={preview} />
-      )}
+      <div className="container">
+        {preview.hasOwnProperty('error') ? (
+          <div className="empty">
+            <h2>Please enter a valid URL</h2>
+          </div>
+        ) : (
+          <>
+            {/* <Preview preview={preview} />
+            <WebsiteCard preview={preview} /> */}
+            <Card preview={preview} />
+          </>
+        )}
+      </div>
     </div>
   );
 };

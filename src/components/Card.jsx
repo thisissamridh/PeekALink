@@ -7,8 +7,6 @@ import {
   CardHeader,
 } from '@material-tailwind/react';
 
-var Sugar = require('sugar-core');
-
 export default function Example({ preview }) {
   const truncate = (string = '', maxLength = 100) =>
     string.length > maxLength ? `${string.substring(0, maxLength)}…` : string;

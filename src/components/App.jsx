@@ -32,7 +32,7 @@ const App = () => {
       <div className="search">
         <input
           type="text"
-          placeholder=""
+          placeholder="Enter a URL to preview"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && ScrapeUrl(url)}

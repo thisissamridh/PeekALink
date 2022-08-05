@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SearchIcon from '../assets/search.svg';
 import '../index.css';
+
 import Card from './Card';
 const API_URL = `https://api.linkpreview.net?key=${process.env.REACT_APP_API_KEY}`;
 
@@ -22,6 +23,7 @@ const App = () => {
     setPreview(data);
     console.log(data.description);
   };
+
   useEffect(() => {
     ScrapeUrl('https://www.apple.com');
   }, []);
@@ -45,9 +47,7 @@ const App = () => {
             <h2>Please enter a valid URL</h2>
           </div>
         ) : (
-          <>
-            <Card preview={preview} />
-          </>
+          <Card preview={preview} />
         )}
       </div>
     </div>

@@ -5,6 +5,7 @@ import {
   Typography,
   Button,
   CardHeader,
+  Tooltip,
 } from '@material-tailwind/react';
 
 export default function Example({ preview }) {
@@ -35,9 +36,11 @@ export default function Example({ preview }) {
       </CardBody>
       <CardFooter className="flex justify-center gap-7 pt-2">
         <a href={preview.url} target="_blank" rel="noopener noreferrer">
-          <Button variant="gradient" fullWidth>
-            Website Link
-          </Button>
+          <Tooltip content={truncate(preview.url, 30)}>
+            <Button variant="gradient" fullWidth>
+              Website Link
+            </Button>
+          </Tooltip>
         </a>
       </CardFooter>
     </Card>
